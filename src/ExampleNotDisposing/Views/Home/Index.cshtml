@@ -1,0 +1,29 @@
+﻿@model List<ExampleNotDisposing.Models.Company>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="row">
+	<div class="col-md-12">
+		<table class="table">
+			<thead>
+			<tr>
+				<th></th>
+			</tr>
+			</thead>
+			<tbody>
+				@foreach (var comp in Model)
+				{
+					@foreach (var emp in comp.Employees)
+					 {
+						 <tr>
+							 <td>@comp.CompanyName</td>
+							 <td>@comp.Ein</td>
+							 <td>@emp.FirstName</td>
+							 <td>@emp.LastName</td>
+						 </tr>
+					 }
+				}
+			</tbody>
+		</table>
+	</div>
+</div>
